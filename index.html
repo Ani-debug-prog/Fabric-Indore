@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fabric – Restaurant and Club in Indore</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0820;--bg2:#130E36;--ink:#F6F1FF;--mute:#B5ADD6;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);--pink:#FF2E93;--violet:#7B2FFF;--cyan:#27D3FF;--gold:#FFB020;--grad:linear-gradient(120deg,#FF2E93,#7B2FFF);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 18px/1.6 Outfit,system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(11,8,32,.9);backdrop-filter:blur(14px);z-index:30}
+h1,h2,h3{font-family:Unbounded,Outfit,system-ui,sans-serif;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(11,8,32,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:68px}
+nav b{font:800 20px Unbounded,sans-serif;letter-spacing:.06em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav div{display:flex;gap:26px;align-items:center;font-size:16px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:#fff}
+.btn{display:inline-block;border:0;border-radius:999px;padding:14px 30px;font:600 16px Outfit,sans-serif;text-decoration:none;cursor:pointer;color:#fff;background:var(--grad);box-shadow:0 8px 32px rgba(255,46,147,.4);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,46,147,.6)}
+.btn.o{background:none;border:1.5px solid var(--line);box-shadow:none}
+.btn.o:hover{border-color:var(--cyan);box-shadow:none}
+nav .btn{padding:9px 20px;font-size:15px;color:#fff}
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 68px);display:grid;place-items:center;text-align:center;overflow:hidden;padding:60px 0}
+.hero::before{content:"";position:absolute;width:min(1000px,160vw);aspect-ratio:1;left:50%;top:50%;translate:-50% -50%;border-radius:50%;background:conic-gradient(#FF2E93,#7B2FFF,#27D3FF,#FFB020,#FF2E93);filter:blur(130px);opacity:.5;animation:spin 20s linear infinite}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,var(--bg) 85%),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 64px)}
+.hero .w{position:relative;z-index:2}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(8px);border-radius:999px;padding:7px 18px;font-size:14px;color:var(--mute);margin-bottom:26px}
+.hero h1{font-size:clamp(64px,17vw,210px);font-weight:800;letter-spacing:-.03em;background:linear-gradient(180deg,#fff 30%,#FFB3DD);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 80px rgba(255,46,147,.35)}
+.hero p{font-size:clamp(18px,2.4vw,24px);color:#E4DCFF;max-width:34ch;margin:20px auto 34px}
+.hero .btn{margin:6px}
+/* ticker */
+.tick{overflow:hidden;background:var(--grad);padding:14px 0;transform:rotate(-1.2deg);margin:0 -20px;position:relative;z-index:3}
+.track{display:flex;gap:44px;width:max-content;animation:slide 30s linear infinite;font:800 18px Unbounded,sans-serif;white-space:nowrap}
+.track span::after{content:"✦";margin-left:44px;opacity:.7}
+@keyframes spin{to{rotate:360deg}}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:110px 0}
+h2{font-size:clamp(30px,4.6vw,52px);margin-bottom:14px}
+.lead{color:var(--mute);max-width:50ch;margin:0 0 48px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;backdrop-filter:blur(8px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:0 18px 50px rgba(123,47,255,.35)}
+.ic{font-size:34px;width:64px;height:64px;display:grid;place-items:center;border-radius:18px;background:var(--grad);margin-bottom:22px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{margin:0;color:var(--mute);font-size:16px}
+.band{background:linear-gradient(180deg,var(--bg),var(--bg2) 30%,var(--bg2) 70%,var(--bg))}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.n{position:relative;border-radius:22px;padding:26px 22px;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02));border:1px solid var(--line);min-height:280px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.n:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(255,46,147,.3)}
+.pill{align-self:flex-start;border-radius:999px;padding:6px 16px;font:600 14px Outfit,sans-serif;background:var(--grad);margin-bottom:auto}
+.n:nth-child(2) .pill{background:linear-gradient(120deg,#27D3FF,#7B2FFF)}
+.n:nth-child(3) .pill{background:linear-gradient(120deg,#FFB020,#FF2E93)}
+.n:nth-child(4) .pill{background:linear-gradient(120deg,#27D3FF,#1FE0A0)}
+.n h3{font-size:22px;margin:40px 0 8px}
+.n p{margin:0 0 14px;color:var(--mute);font-size:15px}
+.n small{color:var(--gold);font-size:14px;font-weight:500}
+/* menu */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.tabs button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 24px;font:500 16px Outfit,sans-serif;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--grad);border-color:transparent;font-weight:600}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.it{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:16px;padding:18px 22px}
+.it div{display:flex;justify-content:space-between;gap:14px;font:500 17px Unbounded,sans-serif}
+.it span{color:var(--gold);font:600 18px Outfit,sans-serif}
+.it p{margin:6px 0 0;color:var(--mute);font-size:15px}
+.note{font-size:13px;color:var(--mute);margin-top:20px}
+/* vibe */
+.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px}
+.t{border-radius:22px;padding:18px;display:flex;align-items:flex-end;font:500 15px Outfit,sans-serif;overflow:hidden;position:relative}
+.t.a{grid-column:span 2;grid-row:span 2;background:radial-gradient(circle at 30% 30%,#FF2E93,transparent 55%),radial-gradient(circle at 80% 80%,#7B2FFF,#1A1050)}
+.t.b{background:radial-gradient(circle at 70% 30%,#FFB020,#FF2E93 70%)}
+.t.c{background:radial-gradient(circle at 30% 70%,#27D3FF,#7B2FFF 70%)}
+.t.d{grid-column:span 2;background:linear-gradient(120deg,#1A1050,#7B2FFF 60%,#27D3FF)}
+.t.e{background:radial-gradient(circle at 50% 20%,#1FE0A0,#0B6E7E 70%)}
+.t::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.07) 0 2px,transparent 2px 14px)}
+.t span{position:relative;background:rgba(11,8,32,.55);backdrop-filter:blur(6px);padding:6px 14px;border-radius:999px}
+/* visit */
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;border-radius:30px;padding:clamp(26px,5vw,56px);background:radial-gradient(circle at 90% 10%,rgba(255,46,147,.35),transparent 50%),radial-gradient(circle at 0% 100%,rgba(123,47,255,.4),transparent 55%),var(--bg2);border:1px solid var(--line)}
+.visit ul{list-style:none;margin:0;padding:0}
+.visit li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.visit li span:first-child{color:var(--mute)}
+footer{padding:44px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{font:800 18px Unbounded,sans-serif;color:var(--ink)}
+@media(max-width:900px){.g3,.menu,.visit{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.mos{grid-template-columns:1fr 1fr}nav div a:not(.btn){display:none}section{padding:80px 0}}
+@media(max-width:520px){.g4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero::before,.track{animation:none}.card,.n,.btn{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="w"><nav aria-label="Main"><b>FABRIC</b><div><a href="#about">Experience</a><a href="#nights">Nights</a><a href="#menu">Menu</a><a href="#visit">Visit</a><a class="btn" href="#visit">Find us</a></div></nav></div></header>
+
+<main>
+<div class="hero"><div class="w">
+  <span class="tag">Restaurant and club, Indore</span>
+  <h1>FABRIC</h1>
+  <p>Great food, loud music and long nights, all under one roof.</p>
+  <a class="btn" href="#nights">See what’s on</a><a class="btn o" href="#menu">Explore the menu</a>
+</div></div>
+
+<div class="tick" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="w">
+  <h2>Eat. Dance. Stay late.</h2>
+  <p class="lead">Fabric is where an Indore evening starts at the table and ends on the dance floor. Three spaces, one night.</p>
+  <div class="g3">
+    <div class="card"><div class="ic">🍽️</div><h3>The Weave</h3><p>An open-kitchen dining room with shared tables and a menu inspired by Malwa street flavours.</p></div>
+    <div class="card"><div class="ic">🎧</div><h3>The Loom</h3><p>Our dance floor: resident DJs, guest headliners and a sound system built for the weekend.</p></div>
+    <div class="card"><div class="ic">🍸</div><h3>The Thread</h3><p>A relaxed terrace bar for craft cocktails and conversation before and after the music.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="nights"><div class="w">
+  <h2>This week at Fabric</h2>
+  <p class="lead">Four nights, four moods. Pick yours.</p>
+  <div class="g4">
+    <article class="n"><span class="pill">Thursday</span><h3>Thread Thursdays</h3><p>Live acoustic sets, small plates and half-price house cocktails.</p><small>8 PM to 11 PM</small></article>
+    <article class="n"><span class="pill">Friday</span><h3>Loom</h3><p>Resident DJs spinning house and Afrobeats until late.</p><small>9 PM to 1 AM</small></article>
+    <article class="n"><span class="pill">Saturday</span><h3>Selvedge</h3><p>Guest headliner night. The biggest party of the week.</p><small>9 PM to 1 AM</small></article>
+    <article class="n"><span class="pill">Sunday</span><h3>Slow Sunday</h3><p>Late brunch, live jazz and a long table for everyone.</p><small>12 PM to 6 PM</small></article>
+  </div>
+</div></section>
+
+<section id="menu"><div class="w">
+  <h2>On the menu</h2>
+  <p class="lead">Sarafa-style street flavours, plated for a late dinner.</p>
+  <div class="tabs" id="tabs" role="group" aria-label="Menu categories"></div>
+  <div class="menu" id="list"></div>
+  <p class="note">Sample menu for demonstration. Dishes and prices are placeholders.</p>
+</div></section>
+
+<section class="band"><div class="w">
+  <h2>The vibe</h2>
+  <p class="lead">A first look at the mood. Real photos of the venue will replace these.</p>
+  <div class="mos">
+    <div class="t a"><span>The Loom at midnight</span></div>
+    <div class="t b"><span>Golden hour</span></div>
+    <div class="t c"><span>Signature cocktails</span></div>
+    <div class="t d"><span>The Thread terrace</span></div>
+    <div class="t e"><span>Chef’s counter</span></div>
+  </div>
+</div></section>
+
+<section id="visit"><div class="w">
+  <div class="visit">
+    <div><h2>Plan your night</h2><p class="lead" style="margin-bottom:28px">Walk in or follow the map. We’re in Indore, Madhya Pradesh.</p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fabric+Indore" target="_blank" rel="noopener">Get directions</a></div>
+    <ul>
+      <li><span>Monday to Wednesday</span><span>7 PM – 12 AM</span></li>
+      <li><span>Thursday</span><span>8 PM – 11 PM</span></li>
+      <li><span>Friday and Saturday</span><span>9 PM – 1 AM</span></li>
+      <li><span>Sunday</span><span>12 PM – 6 PM</span></li>
+    </ul>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="w"><div><b>FABRIC</b><br>Indore, Madhya Pradesh</div><div>Concept design. Names, menu, events and hours are sample content.</div></div></footer>
+
+<script>
+const T=["Live DJs","Craft cocktails","Street-food flavours","Weekend headliners","Open late"];
+const h=T.map(t=>"<span>"+t+"</span>").join("");
+document.getElementById("track").innerHTML=h+h+h+h;
+const M={
+"Small plates":[["Sarafa chaat tartlets","Spiced potato, sev, tamarind, pomegranate",420],["Poha arancini","Crisp rice balls, peanut chutney, lime",460],["Garadu fries","Purple yam, chaat masala, mint yoghurt",380],["Smoked paneer tikka","Charred peppers, kasundi, pickled onion",520]],
+"Mains":[["Dal bafla risotto","Baked wheat dumpling, ghee, roast garlic",640],["Malwa butter chicken","Slow-cooked, makhani, kasuri methi",720],["Wild mushroom khichdi","Millet, truffle oil, crisp onion",590],["Fabric burger","Aloo tikki or chicken, house sauce",540]],
+"Cocktails":[["Indigo Sour","Gin, butterfly pea, lemon, egg white",650],["Madder Mule","Vodka, beetroot, ginger beer, lime",620],["Turmeric Old Fashioned","Bourbon, haldi syrup, orange bitters",720],["Jalebi Martini","Vodka, saffron, rabri cream",690]],
+"Desserts":[["Jalebi with rabri","Hot, crisp, served at the table",360],["Chocolate sev brownie","Salted caramel, vanilla ice cream",420],["Shrikhand cheesecake","Cardamom, pistachio crumb",440],["Kulfi flight","Malai, mango, paan",390]]
+};
+const tabs=document.getElementById("tabs"),list=document.getElementById("list");
+function show(k){
+  tabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.textContent===k));
+  list.innerHTML=M[k].map(i=>`<div class="it"><div>${i[0]}<span>₹${i[2]}</span></div><p>${i[1]}</p></div>`).join("");
+}
+Object.keys(M).forEach(k=>{const b=document.createElement("button");b.textContent=k;b.onclick=()=>show(k);tabs.appendChild(b)});
+show("Small plates");
+</script>
+</body>
+</html>
